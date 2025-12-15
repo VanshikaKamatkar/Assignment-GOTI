@@ -80,3 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
         collectionObserver.observe(collectionGrid);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Select the section
+    const bestsellerSection = document.querySelector('.bestseller-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // If the section is visible in the viewport
+            if (entry.isIntersecting) {
+                // Add the class that triggers the CSS animation
+                bestsellerSection.classList.add('animate');
+                // Stop observing (so it doesn't animate again when scrolling up)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% of section is visible
+
+    if (bestsellerSection) {
+        observer.observe(bestsellerSection);
+    }
+});

@@ -1898,3 +1898,56 @@ body {
         text-align: center;
     }
 }
+
+/* --- ANIMATION ENHANCEMENTS --- */
+
+/* 1. Staggered Entrance Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Start lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End in place */
+    }
+}
+
+/* Set Initial State (Hidden) */
+.product-card {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(40px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Smooth hover physics */
+}
+
+/* The class JS will add to trigger animation */
+.bestseller-section.animate .product-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+/* Stagger Delays (Waterfall Effect) */
+/* Card 1 appears immediately */
+.bestseller-section.animate .product-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+/* Card 2 waits 0.2s */
+.bestseller-section.animate .product-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+/* Card 3 waits 0.4s */
+.bestseller-section.animate .product-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+/* 2. Premium Hover Interaction */
+.product-card:hover {
+    /* Lift the card up */
+    transform: translateY(-10px) !important; 
+    /* Add a soft luxury shadow */
+    box-shadow: 0 20px 40px rgba(33, 75, 72, 0.1); 
+}
+
+/* Existing Zoom effect (ensure this stays) */
+.product-card:hover .product-image img {
+    transform: scale(1.08); /* Slightly stronger zoom */
+}
