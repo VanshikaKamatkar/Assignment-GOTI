@@ -389,7 +389,7 @@ body {
 
 /* --- HERO SECTION --- */
 .hero-section {
-    background-image: url('./assets/hero-bg.png'); 
+    background-image: url('./assets/hero-bg.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -536,7 +536,7 @@ body {
 /* --- MOBILE HERO SECTION --- */
 @media (max-width: 768px) {
     .hero-section {
-        background-image: url('./assets/hero-bg-mobile.png'); 
+        background-image: url('./assets/hero-bg-mobile.webp'); 
         background-size: cover;
         background-position: center;
         height: 600px;
@@ -1082,11 +1082,11 @@ body {
 }
 
 .left-card {
-    background-image: url('./assets/campaign-img-1.jpg'); 
+    background-image: url('./assets/campaign-img-1.webp'); 
 }
 
 .right-card {
-    background-image: url('./assets/campaign-img-2.jpg'); 
+    background-image: url('./assets/campaign-img-2.webp'); 
 }
 
 .campaign-overlay {
